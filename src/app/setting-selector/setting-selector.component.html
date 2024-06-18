@@ -1,0 +1,8 @@
+<div class="setting-selector">
+    <h2>Select a Setting</h2>
+    <div *ngFor="let setting of settings">
+      <input type="radio" name="setting" [value]="setting" (change)="selectedSetting = setting"> {{ setting }}
+    </div>
+    <button (click)="confirmSelection()" [disabled]="!selectedSetting">Confirm</button>
+  </div>
+  

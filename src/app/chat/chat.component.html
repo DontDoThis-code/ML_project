@@ -1,0 +1,21 @@
+<div class="chat-container">
+  <div class="messages" #scrollMe>
+    <div *ngFor="let message of messages">
+      <div [ngClass]="{'user-message': message.role === 'user', 'assistant-message': message.role === 'assistant'}">
+        <span *ngIf="!message.content.startsWith('![Image](')">
+          {{ message.content }}
+        </span>
+        <img *ngIf="message.content.startsWith('![Image](')" [src]="extractImageUrl(message.content)" (click)="openImageFullscreen(extractImageUrl(message.content))" />
+      </div>
+    </div>
+  </div>
+  <div class="input-container">
+    <input #userInput type="text" placeholder="Type your message here" (keyup.enter)="sendMessage(userInput.value); userInput.value='';" />
+    <button (click)="sendMessage(userInput.value); userInput.value='';">Send</button>
+  </div>
+</div>
+
+<div *ngIf="fullscreenImage" class="fullscreen-image" (click)="closeImageFullscreen()">
+  <button class="close-button" (click)="closeImageFullscreen()">Close</button>
+  <img [src]="fullscreenImage" />
+</div>

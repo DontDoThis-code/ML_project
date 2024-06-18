@@ -1,0 +1,9 @@
+.setting-selector {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .setting-selector h2 {
+    margin: 0 0 10px 0;
+  }

@@ -1,0 +1,82 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* 100% height minus 5% margin from top and bottom */
+  width: 90vw;  /* 100% width minus 5% margin from left and right */
+  margin: 5vh 5vw; /* 5% margin from every side */
+  border: 1px solid #ccc;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.input-container {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-right: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-message {
+  text-align: right;
+  background-color: #dcf8c6;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+.assistant-message {
+  text-align: left;
+  background-color: #f1f0f0;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+img {
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen-image img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+}
